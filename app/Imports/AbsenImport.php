@@ -14,11 +14,10 @@ class AbsenImport implements ToModel
     */
     public function model(array $row)
     {
-        $str = str_replace('/','-',$row[1]);
-        
+
         return new DataRawAbsensi([
             'id_kry'        => $row[0],
-            'tgl'           => strtotime($str),
+            'tgl'           => date('Y-m-d H:i:s',strtotime($row[1])),
             'kd_absen'      => $row[2],
             'id_mesin'      => $row[3]
         ]);
