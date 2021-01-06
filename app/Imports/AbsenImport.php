@@ -18,7 +18,7 @@ class AbsenImport implements ToModel
         
         return new DataRawAbsensi([
             'id_kry'        => $row[0],
-            'tgl'           => strtotime($str);,
+            'tgl'           => strtotime($str),
             'kd_absen'      => $row[2],
             'id_mesin'      => $row[3]
         ]);
